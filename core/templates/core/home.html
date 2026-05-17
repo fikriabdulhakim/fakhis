@@ -28,10 +28,29 @@
           {% endfor %}
         </ul>
       </li>
-      <li>Engineering</li>
-      <li>Software</li>
+      <li class="dropdown">Engineering
+              <ul class="dropdown-menu">
+          {% for item in industries %}
+          <li><a href="https://www.google.com/search?q={{ item|urlencode }}" target="_blank">{{ item }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      
+      <li class="dropdown">Software
+              <ul class="dropdown-menu">
+          {% for item in industries %}
+          <li><a href="https://www.google.com/search?q={{ item|urlencode }}" target="_blank">{{ item }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
       <li><a href="https://google.com/focus_topic">Focus Topic</a></li>
-      <li>Company</li>
+      <li class="dropdown">Company
+              <ul class="dropdown-menu">
+          {% for item in industries %}
+          <li><a href="https://www.google.com/search?q={{ item|urlencode }}" target="_blank">{{ item }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
       <li><a href="https://google.com/contact">Contact</a></li>
     </ul>
     <div class="actions">
