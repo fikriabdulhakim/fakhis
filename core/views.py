@@ -37,8 +37,8 @@ def home(request):
     ]
 
     software = [
-        {"name": "Rheina", "url": google_link("Rheina")},
-        {"name": "Kuisioner", "url": google_link("Kuisioner")},
+        {"name": "Rheina", "url": www.rheina.id},
+        {"name": "Kuisioner", "url": www.kuisioner.com},
     ]
 
     company = [
