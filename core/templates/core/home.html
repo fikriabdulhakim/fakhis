@@ -30,7 +30,7 @@
       </li>
       <li class="dropdown">Engineering
               <ul class="dropdown-menu">
-          {% for item in industries %}
+          {% for item in engineering %}
           <li><a href="https://www.google.com/search?q={{ item|urlencode }}" target="_blank">{{ item }}</a></li>
           {% endfor %}
         </ul>
@@ -38,7 +38,7 @@
       
       <li class="dropdown">Software
               <ul class="dropdown-menu">
-          {% for item in industries %}
+          {% for item in software %}
           <li><a href="https://www.google.com/search?q={{ item|urlencode }}" target="_blank">{{ item }}</a></li>
           {% endfor %}
         </ul>
@@ -46,7 +46,7 @@
       <li><a href="https://google.com/focus_topic">Focus Topic</a></li>
       <li class="dropdown">Company
               <ul class="dropdown-menu">
-          {% for item in industries %}
+          {% for item in company %}
           <li><a href="https://www.google.com/search?q={{ item|urlencode }}" target="_blank">{{ item }}</a></li>
           {% endfor %}
         </ul>
