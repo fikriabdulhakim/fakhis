@@ -19,66 +19,86 @@
 
 <nav class="navbar">
   <div class="container nav-inner">
-    <img src="{% static 'core/images/logo.png' %}" class="logo" alt="PSN">
-    <ul class="menu">
-      
-     <li class="dropdown">
-    <a href="#">Industries</a>
-    <ul class="dropdown-menu">
-        {% for item in industries %}
-            <li>
-                <a href="{{ item.url }}" target="_blank">
-                    {{ item.name }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-</li>
-      <li class="dropdown">
-    <a href="#">Engineering</a>
-    <ul class="dropdown-menu">
-        {% for item in engineering %}
-            <li>
-                <a href="{{ item.url }}" target="_blank">
-                    {{ item.name }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-</li>
-      
-     <li class="dropdown">
-    <a href="#">Software</a>
-    <ul class="dropdown-menu">
-        {% for item in software %}
-            <li>
-                <a href="{{ item.url }}" target="_blank">
-                    {{ item.name }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-</li>
-      <li><a href="https://google.com/focus_topic">Focus Topic</a></li>
-      <li class="dropdown">
-    <a href="#">Company</a>
-    <ul class="dropdown-menu">
-        {% for item in company %}
-            <li>
-                <a href="{{ item.url }}" target="_blank">
-                    {{ item.name }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-</li>
 
-      <li><a href="https://google.com/contact">Contact</a></li>
+    <!-- Logo -->
+    <img src="{% static 'core/images/logo.png' %}" class="logo" alt="PSN">
+
+    <!-- Hamburger Menu Button (tambahkan ini) -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+      ☰
+    </button>
+
+    <!-- Tambahkan id="mainMenu" -->
+    <ul class="menu" id="mainMenu">
+
+      <li class="dropdown">
+        <a href="#">Industries</a>
+        <ul class="dropdown-menu">
+          {% for item in industries %}
+          <li>
+            <a href="{{ item.url }}" target="_blank">
+              {{ item.name }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Engineering</a>
+        <ul class="dropdown-menu">
+          {% for item in engineering %}
+          <li>
+            <a href="{{ item.url }}" target="_blank">
+              {{ item.name }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Software</a>
+        <ul class="dropdown-menu">
+          {% for item in software %}
+          <li>
+            <a href="{{ item.url }}" target="_blank">
+              {{ item.name }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li>
+        <a href="{{ focus_topic_url }}" target="_blank">Focus Topic</a>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Company</a>
+        <ul class="dropdown-menu">
+          {% for item in company %}
+          <li>
+            <a href="{{ item.url }}" target="_blank">
+              {{ item.name }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      <li>
+        <a href="{{ contact_url }}" target="_blank">Contact</a>
+      </li>
     </ul>
+
+    <!-- Actions -->
     <div class="actions">
       <i class="fas fa-search"></i> ID EN
     </div>
+
   </div>
+
   <div class="rainbow"></div>
 </nav>
 
