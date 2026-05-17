@@ -52,8 +52,6 @@ def home(request):
         "engineering": engineering,
         "software": software,
         "company": company,
-        "focus_topic_url": google_link("focus_topic"),
-        "contact_url": google_link("contact"),
     }
 
     return render(request, "core/home.html", context)
