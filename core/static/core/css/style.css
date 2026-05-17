@@ -5,7 +5,7 @@
 .topbar {
     position: sticky;
     top: 0;
-    z-index: 1001; /* lebih tinggi dari navbar */
+    z-index: 1000; /* lebih tinggi dari navbar */
     background: #d9d9d9;
     padding: 8px 0;
     font-size: 14px;
