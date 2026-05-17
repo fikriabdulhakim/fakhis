@@ -2,15 +2,7 @@
 .container{width:min(1200px,92%);margin:auto}
 .topbar{background:#d9d9d9;padding:8px 0;font-size:14px}.topbar .right{text-align:right}
 .topbar a{margin-left:10px;color:#333}
-.topbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* lebih tinggi dari navbar */
-    background: #d9d9d9;
-    padding: 8px 0;
-    font-size: 14px;
-}
-
+.topbar {position: sticky; top: 0; z-index: 1000; background: #d9d9d9;  padding: 8px 0; font-size: 14px;}
 .navbar{position:sticky;top:40px;background:#fff;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.08)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
 .logo{height:60px}
@@ -21,8 +13,6 @@
 .dropdown:hover .dropdown-menu{display:block}
 .dropdown-menu li{padding:6px 0}
 .rainbow{height:4px;background:linear-gradient(90deg,red,orange,yellow,green,cyan,blue,violet)}
-.hero{height:90vh;background:#123d7a;position:relative;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
-.overlay{padding:20px}
 .btn,.btn-small{display:inline-block;background:#1e5eff;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:80px 0}
 .card{padding:30px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
@@ -35,4 +25,107 @@
 .cta{background:url('https://via.placeholder.com/1600x500') center/cover;height:350px;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
 .footer{background:#111;color:#fff;padding:50px 0}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px}
-@media(max-width:900px){.cards,.two-col,.features,.footer-grid{grid-template-columns:1fr}.menu{display:none}}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;              /* Full screen height */
+    min-height: 600px;          /* Minimum height on smaller screens */
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    text-align: center;
+}
+
+/* =========================================
+   VIDEO BACKGROUND
+   ========================================= */
+
+.hero-video {
+    position: absolute;
+    inset: 0;                   /* top:0; right:0; bottom:0; left:0 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* Fill area while preserving aspect ratio */
+    object-position: center center;
+    z-index: 1;
+}
+
+/* Optional dark overlay for better text readability */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2;
+}
+
+/* =========================================
+   CONTENT OVERLAY
+   ========================================= */
+
+.hero .overlay {
+    position: relative;
+    z-index: 3;                 /* Above video and dark layer */
+    max-width: 900px;
+    width: 100%;
+    padding: 0 24px;
+}
+
+.hero .overlay h1 {
+    margin: 0 0 20px;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero .overlay p {
+    margin: 0 0 12px;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    line-height: 1.6;
+}
+
+.hero .overlay .btn {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 14px 32px;
+    background: #0057ff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hero .overlay .btn:hover {
+    background: #003ec9;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   MOBILE ADJUSTMENTS
+   ========================================= */
+
+@media (max-width: 768px) {
+    .hero {
+        height: 100svh;         /* Better viewport handling on mobile */
+        min-height: 500px;
+    }
+
+    .hero .overlay {
+        padding: 0 20px;
+    }
+
+    .hero .overlay .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
