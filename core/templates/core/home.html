@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSN</title>
+<link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="container right">
+    email: info@psn.id | telp 62823 5043 4289
+    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <img src="{% static 'core/images/logo.png' %}" class="logo" alt="PSN">
+    <ul class="menu">
+      <li class="dropdown">Industries
+        <ul class="dropdown-menu">
+          {% for item in industries %}
+          <li><a href="https://www.google.com/search?q={{ item|urlencode }}" target="_blank">{{ item }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>Engineering</li>
+      <li>Software</li>
+      <li><a href="https://google.com/focus_topic">Focus Topic</a></li>
+      <li>Company</li>
+      <li><a href="https://google.com/contact">Contact</a></li>
+    </ul>
+    <div class="actions">
+      <i class="fas fa-search"></i> ID EN
+    </div>
+  </div>
+  <div class="rainbow"></div>
+</nav>
+
+<header class="hero">
+  <video autoplay muted loop>
+    <source src="" type="video/mp4">
+  </video>
+  <div class="overlay">
+    <h1>Simplifying Immersion</h1>
+    <p>We are your partner in designing immersive reality.</p>
+    <p>We increase your productivity and support you in digitalization.</p>
+    <a class="btn">Make Immersion Now</a>
+  </div>
+</header>
+
+<section class="cards container">
+  <div class="card"><h3>Extended Reality</h3><p>Immersive solutions.</p><a class="btn-small">Learn More</a></div>
+  <div class="card"><h3>Monitoring</h3><p>Real-time monitoring systems.</p><a class="btn-small">Learn More</a></div>
+  <div class="card"><h3>Software</h3><p>Custom software development.</p><a class="btn-small">Learn More</a></div>
+</section>
+
+<section class="expertise container two-col">
+  <div><img src="https://via.placeholder.com/600x400" alt=""></div>
+  <div>
+    <h2>Our Expertise</h2>
+    <p>We are internationally experienced specialists in future-oriented logistics planning, simulation and software.</p>
+    <a class="btn">Partner With Us</a>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <h2>What distinguishes us</h2>
+    <div class="features">
+      <div>Creative & Professional</div>
+      <div>Extensive customer satisfaction</div>
+      <div>A team of long-time experts</div>
+      <div>Over 35 years of experience</div>
+    </div>
+  </div>
+</section>
+
+<section class="experience container two-col">
+  <div>
+    <h2>Our Experience</h2>
+    <div class="counters">
+      <div><span class="counter" data-target="4003">0</span><p>Projects</p></div>
+      <div><span class="counter" data-target="701">0</span><p>Customers</p></div>
+      <div><span class="counter" data-target="30">0</span><p>Industries</p></div>
+    </div>
+  </div>
+  <div><img src="https://via.placeholder.com/600x400" alt=""></div>
+</section>
+
+<section class="cta">
+  <div class="overlay">
+    <h2>Do you have a specific project and need support?</h2>
+    <a class="btn">Contact Us</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><img src="{% static 'core/images/logo.png' %}" class="logo"></div>
+    <div>
+      PT Mahadata Citra Nusantara<br>
+      Jl Ibrahim Adjie 363, Bandung<br>
+      Phone 08212154512<br>
+      <a href="mailto:info@psn.id">Write an email</a>
+    </div>
+    <div>Imprint | Privacy Policy | Media | Cookie Settings | Contact</div>
+  </div>
+</footer>
+
+<script src="{% static 'core/js/main.js' %}"></script>
+</body>
+</html>
