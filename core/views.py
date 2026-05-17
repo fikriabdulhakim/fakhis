@@ -1,3 +1,5 @@
+# views.py
+
 from django.shortcuts import render
 from urllib.parse import quote
 
@@ -7,7 +9,6 @@ def google_link(text):
 
 
 def home(request):
-
     industries = [
         {"name": "Office & Commercial Buildings", "url": google_link("Office & Commercial Buildings")},
         {"name": "Facilities & Critical Infrastructure", "url": google_link("Facilities & Critical Infrastructure")},
@@ -27,19 +28,18 @@ def home(request):
     ]
 
     engineering = [
-        {"name": "Simulation", "url": google_link("simulation")},
-        {"name": "Logistic Planning", "url": google_link("logistic planning")},
-        {"name": "Digital Twin", "url": google_link("digital twin")},
+        {"name": "Simulation", "url": google_link("Simulation")},
+        {"name": "Logistic Planning", "url": google_link("Logistic Planning")},
+        {"name": "Digital Twin", "url": google_link("Digital Twin")},
         {"name": "XR", "url": google_link("XR")},
-        {"name": "WiFi Sensing", "url": google_link("wifi sensing")},
-        {"name": "IoT", "url": google_link("iot")},
+        {"name": "WiFi Sensing", "url": google_link("WiFi Sensing")},
+        {"name": "IoT", "url": google_link("IoT")},
     ]
 
     software = [
-        {"name": "Rheina", "url": google_link("rheina")},
-        {"name": "Kuisioner", "url": google_link("kuisioner")},
+        {"name": "Rheina", "url": google_link("Rheina")},
+        {"name": "Kuisioner", "url": google_link("Kuisioner")},
     ]
-
 
     company = [
         {"name": "About Us", "url": google_link("About Us")},
@@ -47,14 +47,13 @@ def home(request):
         {"name": "Career", "url": google_link("Career")},
     ]
 
-
     context = {
         "industries": industries,
         "engineering": engineering,
         "software": software,
-        "focus_topic_url": focus_topic_url,
         "company": company,
-        "contact_url": contact_url,
+        "focus_topic_url": google_link("focus_topic"),
+        "contact_url": google_link("contact"),
     }
 
     return render(request, "core/home.html", context)
