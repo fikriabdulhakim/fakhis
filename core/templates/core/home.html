@@ -21,36 +21,58 @@
   <div class="container nav-inner">
     <img src="{% static 'core/images/logo.png' %}" class="logo" alt="PSN">
     <ul class="menu">
-      <li class="dropdown">Industries
-        <ul class="dropdown-menu">
-          {% for item in industries %}
-          <li><a href="https://www.google.com/search?q={{ item|urlencode }}" target="_blank">{{ item }}</a></li>
-          {% endfor %}
-        </ul>
-      </li>
-      <li class="dropdown">Engineering
-              <ul class="dropdown-menu">
-          {% for item in engineering %}
-          <li><a href="https://www.google.com/search?q={{ item|urlencode }}" target="_blank">{{ item }}</a></li>
-          {% endfor %}
-        </ul>
-      </li>
       
-      <li class="dropdown">Software
-              <ul class="dropdown-menu">
-          {% for item in software %}
-          <li><a href="https://www.google.com/search?q={{ item|urlencode }}" target="_blank">{{ item }}</a></li>
-          {% endfor %}
-        </ul>
-      </li>
+     <li class="dropdown">
+    <a href="#">Industries</a>
+    <ul class="dropdown-menu">
+        {% for item in industries %}
+            <li>
+                <a href="{{ item.url }}" target="_blank">
+                    {{ item.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</li>
+      <li class="dropdown">
+    <a href="#">Engineering</a>
+    <ul class="dropdown-menu">
+        {% for item in engineering %}
+            <li>
+                <a href="{{ item.url }}" target="_blank">
+                    {{ item.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</li>
+      
+     <li class="dropdown">
+    <a href="#">Software</a>
+    <ul class="dropdown-menu">
+        {% for item in software %}
+            <li>
+                <a href="{{ item.url }}" target="_blank">
+                    {{ item.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</li>
       <li><a href="https://google.com/focus_topic">Focus Topic</a></li>
-      <li class="dropdown">Company
-              <ul class="dropdown-menu">
-          {% for item in company %}
-          <li><a href="https://www.google.com/search?q={{ item|urlencode }}" target="_blank">{{ item }}</a></li>
-          {% endfor %}
-        </ul>
-      </li>
+      <li class="dropdown">
+    <a href="#">Company</a>
+    <ul class="dropdown-menu">
+        {% for item in company %}
+            <li>
+                <a href="{{ item.url }}" target="_blank">
+                    {{ item.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</li>
+
       <li><a href="https://google.com/contact">Contact</a></li>
     </ul>
     <div class="actions">
